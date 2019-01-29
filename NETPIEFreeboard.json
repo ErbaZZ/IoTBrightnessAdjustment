@@ -1,0 +1,236 @@
+{
+ "version": "application/octet-stream",
+ "allow_edit": true,
+ "plugins": [],
+ "panes": [
+  {
+   "width": 1,
+   "row": {
+    "3": 1,
+    "4": 5,
+    "5": 1,
+    "6": 1
+   },
+   "col": {
+    "3": 1,
+    "4": 1,
+    "5": 2,
+    "6": 1
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "gauge",
+     "settings": {
+      "title": "Dimmer",
+      "value": "datasources[\"Freeboard\"][\"/EmbeddedProject2/Dimmer\"]*100",
+      "units": "%",
+      "min_value": 0,
+      "max_value": "100"
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "caption": "Dimmer Control",
+      "color": "grey",
+      "showvalue": 1,
+      "min": 0,
+      "max": "100",
+      "step": "1",
+      "initialvalue": "",
+      "autovaluesource": "datasources[\"Freeboard\"][\"/EmbeddedProject2/Dimmer\"] * 100",
+      "onStart": "datasources[\"Freeboard\"]",
+      "onSlide": "microgear[\"Freeboard\"].publish(\"/SetDimmer\", value)"
+     }
+    }
+   ]
+  },
+  {
+   "title": "RGB Red",
+   "width": 1,
+   "row": {
+    "3": 1,
+    "4": 11,
+    "5": 1,
+    "6": 1
+   },
+   "col": {
+    "3": 3,
+    "4": -16,
+    "5": -8,
+    "6": 6
+   },
+   "col_width": "1",
+   "widgets": [
+    {
+     "type": "gauge",
+     "settings": {
+      "title": "Red",
+      "value": "datasources[\"Freeboard\"][\"/EmbeddedProject2/RGBLED/Red\"]",
+      "units": "%",
+      "min_value": 0,
+      "max_value": 100
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "color": "red",
+      "showvalue": true,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "initialvalue": "0",
+      "autovaluesource": "datasources[\"Freeboard\"][\"/EmbeddedProject2/RGBLED/Red\"]",
+      "onSlide": "microgear[\"Freeboard\"].publish(\"/SetRGBLED/Red\", value)"
+     }
+    }
+   ]
+  },
+  {
+   "title": "RGB Blue",
+   "width": 1,
+   "row": {
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1
+   },
+   "col": {
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 4
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "gauge",
+     "settings": {
+      "title": "Blue",
+      "value": "datasources[\"Freeboard\"][\"/EmbeddedProject2/RGBLED/Blue\"]",
+      "units": "%",
+      "min_value": 0,
+      "max_value": 100
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "color": "blue",
+      "showvalue": 1,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "initialvalue": "0",
+      "autovaluesource": "datasources[\"Freeboard\"][\"/EmbeddedProject2/RGBLED/Blue\"]",
+      "onSlide": "microgear[\"Freeboard\"].publish(\"/SetRGBLED/Blue\", value)"
+     }
+    }
+   ]
+  },
+  {
+   "title": "RGB Green",
+   "width": 1,
+   "row": {
+    "3": 11,
+    "4": 1,
+    "5": 1,
+    "6": 1
+   },
+   "col": {
+    "3": 3,
+    "4": 2,
+    "5": 3,
+    "6": 3
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "gauge",
+     "settings": {
+      "title": "Green",
+      "value": "datasources[\"Freeboard\"][\"/EmbeddedProject2/RGBLED/Green\"]",
+      "units": "%",
+      "min_value": 0,
+      "max_value": 100
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "caption": "Green",
+      "color": "green",
+      "showvalue": 1,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "initialvalue": "0",
+      "autovaluesource": "datasources[\"Freeboard\"][\"/EmbeddedProject2/RGBLED/Green\"]",
+      "onSlide": "microgear[\"Freeboard\"].publish(\"/SetRGBLED/Green\",value)"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Curtain",
+   "width": 1,
+   "row": {
+    "3": 11,
+    "4": 1,
+    "5": 1,
+    "6": 1
+   },
+   "col": {
+    "3": 1,
+    "4": 4,
+    "5": 5,
+    "6": 5
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "gauge",
+     "settings": {
+      "title": "Curtain Angle",
+      "value": "datasources[\"Freeboard\"][\"/EmbeddedProject2/Curtain\"]",
+      "units": "°",
+      "min_value": 0,
+      "max_value": "180"
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "caption": "Curtain Control",
+      "color": "grey",
+      "showvalue": 1,
+      "min": 0,
+      "max": "180",
+      "step": 1,
+      "initialvalue": "0",
+      "autovaluesource": "datasources[\"Freeboard\"][\"/EmbeddedProject2/Curtain\"]",
+      "onSlide": "microgear[\"Freeboard\"].publish(\"/SetCurtain\", value)"
+     }
+    }
+   ]
+  }
+ ],
+ "datasources": [
+  {
+   "name": "Freeboard",
+   "type": "netpie_microgear",
+   "settings": {
+    "name": "Freeboard",
+    "appid": "EmbeddedProject2",
+    "key": "v9tAhW3u8FubX3X",
+    "secret": "QiAHJtPxcNm4qRfWw0gQ14TdM",
+    "topics": "/#",
+    "onCreatedAction": ""
+   }
+  }
+ ],
+ "columns": 6,
+ "theme": "default"
+}
